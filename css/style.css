@@ -1,0 +1,307 @@
+/* css reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* end of css reset */
+
+@font-face {
+    font-family: 'Lexend Deca';
+    src: url('../static/font/LexendDeca-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../static/font/Inter-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../static/font/Inter-Bold.ttf');
+    font-weight: 700;
+}
+
+:root {
+    --very_dark_blue: hsl(233, 47%, 7%);
+    --dark_desaturated_blue: hsl(244, 38%, 16%);
+    --soft_violet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --slightly_transparent_white_h: hsla(0, 0%, 100%, 0.75);
+    --slightly_transparent_white_p: hsla(0, 0%, 100%, 0.6);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--very_dark_blue);
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: 1.752rem;
+    font-weight: 700;
+    color: var(--white);
+    padding: 0 2rem;
+    line-height: 2rem;
+    margin-bottom: 1.1rem;
+}
+
+h1>span {
+    color: var(--soft_violet);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 20.45rem;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--dark_desaturated_blue);
+    margin: 20px 0;
+}
+
+.img-container {
+    margin-bottom: 2.48rem;
+    font-size: 0;
+    position: relative;
+}
+
+.img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    background-color: var(--soft_violet);
+}
+
+img {
+    width: 100%;
+}
+
+.text-container>p {
+    font-size: 0.943rem;
+    padding: 0 2.1rem;
+    line-height: 1.56rem;
+    margin-bottom: 2.1rem;
+}
+
+.text-container>p,
+.flex-container p:not(.stat){
+    color: var(--slightly_transparent_white_p);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container p:not(.stat) {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.005rem;
+}
+
+.flex-container>div {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+
+.flex-container>div:last-of-type {
+    margin-bottom: 1.95rem;
+}
+
+.stat {
+    color: var(--slightly_transparent_white_h);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+@media (min-width: 1200px) {
+    .card {
+        flex-direction: row-reverse;
+        width: 69.315rem;
+    }
+
+    h1 {
+        padding: 0;
+        font-size: 2.256rem;
+        line-height: 2.72rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .img-container {
+        margin-bottom: 0;
+    }
+
+    img {
+        content: url('../images/image-header-desktop.jpg');
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .text-container {
+        flex-basis: 35.8rem;
+        text-align: left;
+        padding: 4.46rem 7rem 1.57rem 4.5rem;
+    }
+
+    .text-container>p {
+        padding: 0;
+        margin-bottom: 4.1rem;
+    }
+
+    .flex-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 2.35rem;
+    }
+}
